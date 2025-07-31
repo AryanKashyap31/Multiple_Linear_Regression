@@ -1,64 +1,70 @@
 # Multiple_Linear_Regression
 📘 Multiple Linear Regression – Economic Index Prediction
 🧠 Project Overview
-This project demonstrates the use of Multiple Linear Regression to predict the Index Price of the economy based on two key financial indicators:
+This project uses Multiple Linear Regression to predict an Economic Index Price based on two key macroeconomic indicators:
 
 📉 Interest Rate
 
 📊 Unemployment Rate
 
-It includes data preprocessing, model training, performance evaluation, and visualization of the relationships among features.
+The model is built using Python and the scikit-learn library. It includes data preprocessing, visualization, model training, performance evaluation, and interpretation of results.
 
 📁 Dataset
-The dataset used in this project is stored in economic_index.csv, which includes the following columns:
+File: economic_index.csv
 
-interest_rate
+Features used:
 
-unemployment_rate
+interest_rate – Annual interest rate
 
-index_price
+unemployment_rate – Percentage of unemployed individuals in the economy
 
-Note: Columns like Unnamed: 0, year, and month were dropped during preprocessing.
+index_price – Target variable (economic index to be predicted)
+
+Columns like Unnamed: 0, year, and month were removed during preprocessing.
 
 ⚙️ Technologies Used
 Python 3
 
-pandas, numpy
+pandas
 
-matplotlib, seaborn
+matplotlib & seaborn
 
 scikit-learn
 
-📊 Workflow
-Data Cleaning
+📊 Workflow Summary
+Data Cleaning & Exploration
 
-Removed irrelevant columns (Unnamed: 0, year, month)
+Removed unnecessary columns
 
 Checked for null values
 
-Exploratory Data Analysis
+Visualized relationships using scatter plots and pairplot
 
-Used scatter plots and pairplots to examine relationships
+Correlation matrix analysis
 
-Calculated the correlation matrix
+Feature Engineering
 
-Data Preparation
+Selected interest_rate and unemployment_rate as features (X)
 
-Selected interest_rate and unemployment_rate as input features
+Target: index_price (y)
 
-Scaled features using StandardScaler
+Preprocessing
 
-Split data into training and testing sets (75% train, 25% test)
+Data split into training and testing sets (75%-25%)
+
+Feature scaling using StandardScaler
 
 Model Training
 
-Trained a LinearRegression model on the training data
+Trained a LinearRegression model on the scaled training data
 
-Evaluation Metrics
+Model Evaluation
 
-Mean Squared Error (MSE)
+Metrics used:
 
 Mean Absolute Error (MAE)
+
+Mean Squared Error (MSE)
 
 Root Mean Squared Error (RMSE)
 
@@ -66,36 +72,37 @@ R² Score
 
 Adjusted R² Score
 
-Cross Validation
-
-Applied 3-fold cross-validation to evaluate training performance
+Cross-validation using cross_val_score with 3 folds
 
 Visualization
 
-Plotted regression lines and actual vs predicted values
+Regression lines
 
-📈 Results
-R² Score: ~ [insert your score]
+Actual vs Predicted comparison
 
-RMSE: ~ [insert your RMSE]
-
-Observed an inverse relationship between interest rate and index price, indicating potential macroeconomic patterns.
+📈 Sample Results (replace with your actuals)
+Metric	Value
+R² Score	0.89
+Adjusted R²	0.88
+MAE	9.25
+MSE	125.7
+RMSE	11.21
 
 📂 File Structure
-plaintext
 Copy
 Edit
 ├── economic_index.csv
-├── regression_model.ipynb
+├── Multiple_Linear_reg.ipynb
 ├── README.md
 🚀 Future Enhancements
-Add Ridge and Lasso regression for regularization
+Add more features (e.g., inflation, GDP growth)
 
-Introduce more features like inflation or GDP
+Apply Ridge/Lasso/ElasticNet for regularization
 
-Deploy as a Streamlit web app
+Turn into a Streamlit web app
+
+Perform residual analysis and improve interpretability
 
 🔗 Author
 Aryan Kashyap
-Feel free to explore and use this project for educational purposes!
-
+This project showcases practical implementation of multiple linear regression on a real-world financial dataset. Ideal for beginners exploring supervised learning techniques.
